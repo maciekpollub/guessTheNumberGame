@@ -2,7 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
+}
+
+body {
+    padding-top: 65px;
 }
 
 .land1 {
@@ -38,4 +42,19 @@
     width: 100%;
     background-color: grey;
     margin: 0 auto;
+}
+
+.nic {
+    display: flex;
+    justify-content: center;
+}
+
+.off-icon {
+    font-size: 100px;
+    background-color: black;
+    color: white;
+}
+
+.earth {
+    font-size: 150%;
 }
