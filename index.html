@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Guess the number!</title >
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
     <link href="style.css" type="text/css" rel="stylesheet" />
 </head>
-<body>
-<p id="info">A random natural number not greater than 100 has been chosen by the program. Try to guess it. You've got
-    10 chances. Good luck.</p>
+<body class="container">
+<div class="row">
+    <p class="col-xs-12 col-md-12" id="info">A random natural number not greater than 100 has been chosen by the program. Try to guess it. You've got
+        10 chances. Good luck.</p>
+</div>
+
 <div class="line"></div>
-<div class="take">
-    <input id="input" type="text" placeholder="enter your guess" autofocus>
-    <button>Give it a try!</button>
+<div class="row take">
+    <input id="input" class="col-xs-3 col-xs-offset 3 col-md-6" type="text" placeholder="enter your guess" autofocus>
+    <button class="col-xs-6 col-md-3 col-md-offset-1">Give it a try!</button>
 </div>
 <script src="script.js"></script>
 </body>
