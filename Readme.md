@@ -1,3 +1,3 @@
-FlexBox
+guessTheNumber
 =========
-This page is devoted to _flex-box_ practice.
+This is an __introductory version__ of my first self-educational game in JavaScript.
