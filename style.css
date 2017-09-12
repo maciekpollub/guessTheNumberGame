@@ -1,4 +1,35 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+p {
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.line {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid black;
+}
+
+.take {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+
+}
+
+#input {
+    font-size: 20px;
+    margin: 15px;
+}
+
+button {
+    padding: 5px 15px;
+    border-radius: 5px;
 }
