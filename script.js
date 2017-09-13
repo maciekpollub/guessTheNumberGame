@@ -62,10 +62,10 @@ function startGame() {
 function endGame() {
     if (gameWon){
         info.innerHTML = 'Congratulations!'+'<br>'+' You\'ve found the number and it took you only ' + guessesMade + ' ' +
-            'steps! Thanks for playing.';
+            'steps!'+'<br>'+' Thanks for playing!';
     } else {
         info.innerHTML = 'Unfortunatelly, you\'ve run out of chances... The number was: ' + number +
-            '. Thanks for playing.';
+            '.'+'<br>'+ 'Thanks for playing!';
     }
     button.removeEventListener('click', clickHandler, false);
     button.disabled=true;
