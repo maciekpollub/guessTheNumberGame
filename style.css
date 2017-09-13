@@ -34,3 +34,11 @@ button {
     padding: 5px 15px;
     border-radius: 5px;
 }
+
+button:hover {
+    background: linear-gradient(300deg, white, grey);
+}
+
+button:active {
+    background: linear-gradient(120deg, white,grey);
+}
