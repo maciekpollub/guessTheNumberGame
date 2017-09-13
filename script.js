@@ -49,7 +49,8 @@ function startGame() {
             info.innerHTML = 'The number you\'re looking for is higher... Guess: ' +
                 '' + guessesMade + ', Remaining: ' + guessesRemaining;
         } else if (guess > number) {
-            info.innerHTML = 'The number  you\'re looking for is lower...';
+            info.innerHTML = 'The number  you\'re looking for is lower...Guess: ' +
+                '' + guessesMade + ', Remaining: ' + guessesRemaining;
         } else {
             gameWon = true;
             endGame();
