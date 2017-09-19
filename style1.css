@@ -38,6 +38,7 @@ span {
     position: absolute;
     top: 0;
     left: 0;
+    transition: top 0.5s ease-out 1s;
 }
 
 .glyphicon-menu-up {

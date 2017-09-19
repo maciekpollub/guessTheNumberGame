@@ -25,6 +25,7 @@ button.style.cursor = 'pointer';
 button.addEventListener('click', clickTheButton, false);
 window.addEventListener('keydown', pressTheEnterKey, false);
 
+
 meteor.style.left = firstMeteorCoordinate + 'px';
 meteor.style.top = secondMeteorCoordinate + 'px';
 
@@ -36,10 +37,6 @@ function pressTheEnterKey(event) {
 
 function clickTheButton() {
     validateInput();
-}
-
-function resetAmmunition() {
-    ammunition.style.top = 255 + 'px';
 }
 
 function validateInput() {
@@ -61,12 +58,19 @@ function moveAmmunition() {
     ammunition.style.top = secondCoordinateGuess - 7.5 + 'px';
 }
 
+function moveMeteor(par) {
+    secondMeteorCoordinate += par;
+    meteor.style.top = secondMeteorCoordinate + 'px';
+}
+
+/*function resetAmmunition() {
+    ammunition.style.top = 255 + 'px';
+}*/
+
 function playGame() {
     guessesMade++;
     guessesRemaining--;
-    gameStatus = 'Shoots taken: ' + guessesMade + '; Remaining shoots: ' + guessesRemaining + ';';
-    moveWeapon();
-    moveAmmunition();
+    gameStatus = 'Shots taken: ' + guessesMade + '; Shots remaining: ' + guessesRemaining + ';';
     if (guessesRemaining < 1) {
         endGame();
     } else {
@@ -75,10 +79,20 @@ function playGame() {
             (secondMeteorCoordinate - 5 < secondCoordinateGuess) &&
             (secondCoordinateGuess < secondMeteorCoordinate + 30)) {
             gameWon = true;
+            moveWeapon();
+            moveAmmunition();
             endGame();
         } else {
+            moveWeapon();
+            moveAmmunition();
             info.innerHTML = 'Unfortunatelly, you missed...' + '<br>' + gameStatus;
-
+        }
+    }
+    if (gameWon === false) {
+        if (secondMeteorCoordinate > 150) {
+            moveMeteor(15);
+        } else {
+            moveMeteor(30);
         }
     }
 }
@@ -87,7 +101,7 @@ function endGame() {
     if (gameWon) {
         info.innerHTML = 'Congratulation!' + '<br>' + 'You\'ve saved the village! It took you only ' + guessesMade + ' takes!';
     } else {
-        info.innerHTML = 'Unfortunatelly...The meteor is just above...'
+        info.innerHTML = 'Unfortunatelly...The meteor is about to hit...'
     }
     button.removeEventListener('click', clickTheButton, false);
     button.disabled = true;
