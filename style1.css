@@ -1,0 +1,50 @@
+* {
+    /*border: 1px solid red;*/
+    box-sizing: border-box;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    border: 2px outset black;
+    position: relative;
+    margin: 0 auto;
+}
+
+p {
+    text-align: center;
+}
+
+span {
+    font-size: 23px;
+    border: 1px solid green;
+}
+
+.weapon {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 270px;
+    left: 137.5px;
+}
+
+.meteor {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 70px;
+    left: 65px;
+}
+
+.glyphicon-menu-up {
+    font-size: 13px;
+    border: 1px solid blue;
+}
+
+.ammunition {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 255px;
+    left: 142.5px;
+}
