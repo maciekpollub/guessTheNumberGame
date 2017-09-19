@@ -1,6 +1,9 @@
 * {
     /*border: 1px solid red;*/
+    font-family: Helvetica, sans-serif;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 .box {
@@ -12,12 +15,12 @@
 }
 
 p {
+    font-size: 20px;
     text-align: center;
 }
 
 span {
     font-size: 23px;
-    border: 1px solid green;
 }
 
 .weapon {
@@ -26,19 +29,19 @@ span {
     position: absolute;
     top: 270px;
     left: 137.5px;
+    transition: left 0.5s ease-out 0s;
 }
 
 .meteor {
     width: 25px;
     height: 25px;
     position: absolute;
-    top: 70px;
-    left: 65px;
+    top: 0;
+    left: 0;
 }
 
 .glyphicon-menu-up {
     font-size: 13px;
-    border: 1px solid blue;
 }
 
 .ammunition {
@@ -47,6 +50,7 @@ span {
     position: absolute;
     top: 255px;
     left: 142.5px;
+    transition: left 0.5s ease-out 0s, top 0.5s ease-out 0.5s;
 }
 
 .coordinates {
@@ -55,6 +59,25 @@ span {
 }
 
 button {
+    padding: 5px 15px;
+    border-radius: 5px;
     width: 100%;
     margin: 30px auto;
 }
+
+button:hover {
+    background: linear-gradient(300deg, white, grey);
+}
+
+button:active {
+    background: linear-gradient(120deg, white,grey);
+}
+
+
+.ag {
+    width: 100%;
+    margin: 30px auto;
+    color: black;
+    background-color: white;
+}
+

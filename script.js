@@ -83,3 +83,4 @@ function endGame() {
     window.removeEventListener('keydown', keydownHandler, false);
     input.disabled=true;
 }
+
