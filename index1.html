@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <title>shootTheMeteor!</title>
     <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
-    <link href="style1.css" type="text/css" rel="stylesheet" />
+    <link href="style1.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <p><code>A dangerous metoeor is approaching the earth... Try to shoot it down entering the x and y coordinates.</code></p>
+            <p id="info"><code>A dangerous metoeor is approaching the earth... Try to shoot it down and save the
+                village. <br>The
+                stage is a 300px-sqare and the meteor is 20px size. Its position is chosen randomly by the programm.<br>
+                Guess the x (from between 0px and 270px) as well as y (from between 0px and 200px) coordinates, relating
+                to the top-left corner
+                and counting rightwise/downwise, respectively. <br>You have 5 takes.<br></code> <kbd>Good luck!</kbd>
+            </p>
         </div>
     </div>
     <div class="row">
@@ -28,8 +34,31 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="coordinates">
+                <input id="x_input"
+                       class="col-xs-6"
+                       type="text"
+                       placeholder="x coordinate"
+                       autofocus>
+                <input id="y_input"
+                       class="col-xs-6"
+                       type="text"
+                       placeholder="y coordinate"
+                       autofocus>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-6">
+            <button>
+                Fire!
+            </button>
+        </div>
+    </div>
 
 </div>
-
+<script src="script1.js"></script>
 </body>
 </html>

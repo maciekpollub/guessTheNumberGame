@@ -48,3 +48,13 @@ span {
     top: 255px;
     left: 142.5px;
 }
+
+.coordinates {
+    width: 300px;
+    margin: 30px auto;
+}
+
+button {
+    width: 100%;
+    margin: 30px auto;
+}
