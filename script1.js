@@ -47,11 +47,14 @@ function clickTheButton() {
 function validateInput() {
     firstCoordinateGuess = parseInt(xInput.value);
     secondCoordinateGuess = parseInt(yInput.value);
-    if (isNaN(firstCoordinateGuess) === false && isNaN(secondMeteorCoordinate) === false) {
-        playGame();
+    if (isNaN(firstCoordinateGuess) || isNaN(secondCoordinateGuess)) {
+        info.innerHTML = 'Please, enter the number.';
+    } else if (firstCoordinateGuess > 270 || secondCoordinateGuess > 200) {
+        info.innerHTML = 'Enter the x, y coordinates not exceeding 270 and 200, respectively. ';
     } else {
-        info.innerHTML = 'Please, enter only the number of pixels for x and y coordinates...'
+        playGame();
     }
+
 }
 
 function moveWeapon() {
@@ -84,12 +87,21 @@ function showExplosion() {
     ammunition.style.display = 'none';
 }
 
+function hitEarth() {
+    meteor.style.top = 270 + 'px';
+    boom.style.display = 'inline-block';
+    boom.style.left = firstMeteorCoordinate + 'px';
+    boom.style.top = 270 + 'px';
+    meteor.style.display = 'none';
+}
+
 function playGame() {
     guessesMade++;
     guessesRemaining--;
     gameStatus = 'Shots taken: ' + guessesMade + '; Shots remaining: ' + guessesRemaining + ';';
     if (guessesRemaining < 1) {
         endGame();
+        setTimeout(hitEarth, 2000);
     } else {
         if ((firstMeteorCoordinate - 5 < firstCoordinateGuess) &&
             (firstCoordinateGuess < firstMeteorCoordinate + 30) &&
@@ -111,7 +123,6 @@ function playGame() {
         } else {
             moveMeteor(30);
         }
-
     } else {
         setTimeout(showExplosion, 1500);
     }
@@ -121,7 +132,7 @@ function endGame() {
     if (gameWon) {
         info.innerHTML = 'Congratulations!' + '<br>' + 'You\'ve saved the village! It took you only ' + guessesMade + ' takes!';
     } else {
-        info.innerHTML = 'Unfortunatelly...The meteor is about to hit...'
+        info.innerHTML = 'Unfortunatelly...The meteor is about to hit...';
     }
     button.removeEventListener('click', clickTheButton, false);
     button.disabled = true;

@@ -45,6 +45,11 @@ span {
     font-size: 13px;
 }
 
+.glyphicon-certificate {
+    font-size: 23px;
+    transition: font-size 2s ease-out 0s;
+}
+
 .ammunition {
     width: 15px;
     height: 15px;
