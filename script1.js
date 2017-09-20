@@ -32,11 +32,15 @@ meteor.style.top = secondMeteorCoordinate + 'px';
 function pressTheEnterKey(event) {
     if (event.keyCode === 13) {
         validateInput();
+        setTimeout(resetAmmunition, 1200);
+        setTimeout(resetFocusOnInput, 1200);
     }
 }
 
 function clickTheButton() {
     validateInput();
+    setTimeout(resetAmmunition, 1200);
+    setTimeout(resetFocusOnInput, 1200);
 }
 
 function validateInput() {
@@ -63,9 +67,13 @@ function moveMeteor(par) {
     meteor.style.top = secondMeteorCoordinate + 'px';
 }
 
-/*function resetAmmunition() {
+function resetAmmunition() {
     ammunition.style.top = 255 + 'px';
-}*/
+}
+
+function resetFocusOnInput() {
+    xInput.focus();
+}
 
 function playGame() {
     guessesMade++;
@@ -99,7 +107,7 @@ function playGame() {
 
 function endGame() {
     if (gameWon) {
-        info.innerHTML = 'Congratulation!' + '<br>' + 'You\'ve saved the village! It took you only ' + guessesMade + ' takes!';
+        info.innerHTML = 'Congratulations!' + '<br>' + 'You\'ve saved the village! It took you only ' + guessesMade + ' takes!';
     } else {
         info.innerHTML = 'Unfortunatelly...The meteor is about to hit...'
     }
