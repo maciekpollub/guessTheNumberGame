@@ -20,6 +20,7 @@ var button = document.querySelector('button');
 var weapon = document.querySelector('.weapon');
 var meteor = document.querySelector('.meteor');
 var ammunition = document.querySelector('.ammunition');
+var boom = document.querySelector('.boom');
 
 button.style.cursor = 'pointer';
 button.addEventListener('click', clickTheButton, false);
@@ -75,6 +76,14 @@ function resetFocusOnInput() {
     xInput.focus();
 }
 
+function showExplosion() {
+    boom.style.display = 'inline-block';
+    boom.style.left = firstMeteorCoordinate + 'px';
+    boom.style.top = secondMeteorCoordinate + 'px';
+    meteor.style.display = 'none';
+    ammunition.style.display = 'none';
+}
+
 function playGame() {
     guessesMade++;
     guessesRemaining--;
@@ -102,6 +111,9 @@ function playGame() {
         } else {
             moveMeteor(30);
         }
+
+    } else {
+        setTimeout(showExplosion, 1500);
     }
 }
 

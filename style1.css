@@ -54,6 +54,15 @@ span {
     transition: left 0.5s ease-out 0s, top 0.5s ease-out 0.5s;
 }
 
+.boom {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
 .coordinates {
     width: 300px;
     margin: 30px auto;
