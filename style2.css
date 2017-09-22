@@ -38,3 +38,26 @@ h3 {
     font-size: 20px;
     text-align: center;
 }
+
+button {
+    padding: 0 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+button:hover {
+    background: linear-gradient(300deg, white, grey);
+}
+
+button:active {
+    background: linear-gradient(120deg, white,grey);
+}
+
+
+.ag {
+    width: 100%;
+    margin: 30px auto;
+    color: black;
+    background-color: white;
+}
